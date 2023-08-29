@@ -1,0 +1,58 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+
+   <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+<div class="tab-pane fade" id="list-doc" role="tabpanel" aria-labelledby="list-home-list">
+              
+
+              <div class="col-md-8">
+      <form class="form-group" action="hs/doctorsearch.php" method="post">
+        <div class="row">
+        <div class="col-md-10"><input type="text" name="doctor_contact" placeholder="Enter Email ID" class = "form-control"></div>
+        <div class="col-md-2"><input type="submit" name="doctor_search_submit" class="btn btn-primary" value="Search"></div></div>
+      </form>
+    </div>
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Doctor Name</th>
+                    <th scope="col">Specialization</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Fees</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php 
+                    $con=mysqli_connect("localhost","root","","myhmsdb");
+                    global $con;
+                    $query = "select * from doctb";
+                    $result = mysqli_query($con,$query);
+                    while ($row = mysqli_fetch_array($result)){
+                      $username = $row['username'];
+                      $spec = $row['spec'];
+                      $email = $row['email'];
+                      $password = $row['password'];
+                      $docFees = $row['docFees'];
+                      
+                      echo "<tr>
+                        <td>$username</td>
+                        <td>$spec</td>
+                        <td>$email</td>
+                        <td>$password</td>
+                        <td>$docFees</td>
+                      </tr>";
+                    }
+
+                  ?>
+                </tbody>
+              </table>
+        <br>
+      </div>
+                  </body>
+                  </html>
