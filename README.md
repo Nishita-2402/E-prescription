@@ -63,12 +63,3 @@ We welcome contributions! Please follow our [contribution guidelines](link-to-co
 ## License
 
 This project is licensed under the [Specify License] - see the [LICENSE.md](LICENSE.md) file for details.
-
----
-
-## Acknowledgements
-
-- [List any libraries, frameworks, or resources used]
-- [Any other acknowledgments]
-
-Feel free to customize this template according to your project's specifics.
